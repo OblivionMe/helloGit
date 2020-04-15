@@ -1,0 +1,39 @@
+<div class="container">
+    <table class="table table-bodered table-stripped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>imdbRating</th>
+                <th>Genre</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!--*ngFor for arrays-->
+                <td>{{Mdata.Title}}</td> 
+                <td>{{Mdata.imdbRating}}</td>
+                <td>{{Mdata.Genre}}</td>
+                <td><button class="btn btn-success " data-toggle="modal" data-target="#myModal">Review</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">write your Review</h4>
+        </div>
+        <div class="modal-body">
+          <p><input type="text-box" placeholder="review..." #sk></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)=submit(sk.value)>Submit</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
